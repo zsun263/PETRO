@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petro"
+version = "0.1.0"
+description = "Robust aggregation of CRISPR guide-level effects into target-level effects"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.26", "scipy>=1.13", "pandas>=2.2", "statsmodels>=0.14.4"]
+
+[project.optional-dependencies]
+numba = ["numba"]
+deseq2 = ["pydeseq2==0.4.12", "anndata<0.12", "pandas<3"]
+plot = ["matplotlib>=3.7"]
+
+[tool.setuptools.package-data]
+"petro.adapters" = ["edger.R"]
